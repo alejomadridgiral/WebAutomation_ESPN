@@ -21,6 +21,7 @@ public class BaseTest {
     @Parameters({"browser"})
     public void beforeSuite(String browser) {
         myDriver = new Driver(browser);
+        myDriver.getDriver().manage().window().maximize();
         espnHome = new EspnHomePage(myDriver.getDriver());
     }
 
@@ -29,7 +30,7 @@ public class BaseTest {
         espnHome.dispose();
     }
 
-    public EspnHomePage EspnHomePage() {
+    public EspnHomePage getEspnHomePage() {
         return espnHome;
     }
 }

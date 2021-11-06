@@ -16,7 +16,7 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="com.espn.training.test.BaseTest"></class>
+            <class name="com.espn.training.test.EspnTest"></class>
         </classes>
     </test>
 </suite>
