@@ -2,20 +2,21 @@
 
 
 <suite name="My test suite" verbose="1">
-    <listeners>
-        <listener class-name="com.espn.training.Listeners"></listener>
-    </listeners>
-    <parameter name="User" value="Alejo"/>
-    <parameter name="Password" value="1234"/>
+<!--    <listeners>-->
+<!--        <listener class-name="com.espn.training.test.Listeners"></listener>-->
+<!--    </listeners>-->
+<!--    <parameter name="User" value="Alejo"/>-->
+<!--    <parameter name="Password" value="1234"/>-->
+    <parameter name="browser" value="chrome" />
     <test name="My first test">
-        <groups>
-            <run>
-                <include name="group4" />
-<!--                <exclude name="group 2, group 1"/>-->
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="group4" />-->
+<!--&lt;!&ndash;                <exclude name="group 2, group 1"/>&ndash;&gt;-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
-        <class name="com.espn.training.EspnLoggingTest"></class>
+            <class name="com.espn.training.test.BaseTest"></class>
         </classes>
     </test>
 </suite>
