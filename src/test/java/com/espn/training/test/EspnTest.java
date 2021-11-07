@@ -7,24 +7,25 @@ import org.testng.annotations.Test;
 
 public class EspnTest extends BaseTest{
 
-    @BeforeTest
+    @BeforeTest (groups = "Signup")
     public void singUp(){
         EspnHomePage home = getEspnHomePage();
         home.triggerUser();
         home.logIn();
+        home.switchToSignUp();
         home.signUp();
         home.fillFirstName("Alejandro");
         home.fillLastName("Madrid");
-        home.fillEmail("alejandro.madrid2@globant.com");
+        home.fillEmail("alejandro.madrid4@globant.com");
         home.fillPassword("GLo_ESPN_1*#");
-//        home.signUp();
+        home.fullfillSingUpSubmit();
     }
 
-    @Test(groups="signUp")
+    @Test(groups="logIn")
     public void testEspnLogin() {
-////        EspnHomePage home = getEspnHomePage();
-////        home.triggerUser();
-//        Assert.assertEquals(home.getUserName(), "Alejandro!");
+        EspnHomePage home = getEspnHomePage();
+        home.triggerUser();
+        Assert.assertEquals(home.getUserName(), "WelcomeAlejandro!");
     }
 
 
