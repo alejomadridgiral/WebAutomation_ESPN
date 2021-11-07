@@ -21,7 +21,7 @@ public class EspnHomePage extends BasePage {
         userTrigger.click();
     }
 
-    @FindBy(css = "li[class='user hover'] div[class='global-user'] div[class='global-user-container'] ul[class='account-management'] li a[data-affiliatename='espn']")
+    @FindBy(css = "li.user a[data-regformid='espn']")
     private WebElement logIn;
 
     public void logIn(){
@@ -32,7 +32,7 @@ public class EspnHomePage extends BasePage {
     private WebElement signUp;
 
 
-    public void switchToSignUp(){
+    public void switchToLogInIframe(){
         getDriver().switchTo().frame("disneyid-iframe");
     }
 
@@ -43,7 +43,7 @@ public class EspnHomePage extends BasePage {
     @FindBy(css="input[placeholder='First Name']")
     private WebElement firstName;
 
-    public void fillFirstName(String fName){
+        public void fillFirstName(String fName){
         getWait().until(ExpectedConditions.elementToBeClickable(firstName));
         firstName.click();
         firstName.sendKeys(fName);
@@ -73,19 +73,57 @@ public class EspnHomePage extends BasePage {
         password.sendKeys(fPassword);
     }
 
-    @FindBy(css="button[type='submit']\n")
+    @FindBy(css="button[type='submit']")
     private WebElement singUpSubmit;
 
     public void fullfillSingUpSubmit(){
         singUpSubmit.click();
     }
 
+    @FindBy(css = "input[placeholder='Username or Email Address']")
+    private WebElement emailAddressLogIn;
+
+    public void fillEmailLogIn(String fEmailLogin){
+        getWait().until(ExpectedConditions.elementToBeClickable(emailAddressLogIn));
+        emailAddressLogIn.click();
+        emailAddressLogIn.sendKeys(fEmailLogin);
+    }
+
+    @FindBy(css = "input[placeholder='Password (case sensitive)']")
+    private WebElement passwordLogIn;
+
+    public void fillPasswordLogIn(String fPasswordLogin){
+        passwordLogIn.click();
+        passwordLogIn.sendKeys(fPasswordLogin);
+    }
+
+    @FindBy(css = "button[aria-label='Log In']")
+    private WebElement logInButton;
+
+    public void clickLogIn(){
+        logInButton.click();
+    }
+
     @FindBy(className = "display-user")
     private WebElement userName;
 
     public String getUserName(){
-
         return userName.getText();
     }
 
+    @FindBy(css = "li[class='user hover'] div[class='global-user'] div[class='global-user-container'] ul[class='account-management'] li a[class='small']")
+    private WebElement logOut;
+
+    public void clickLogOut(){
+        getWait().until(ExpectedConditions.elementToBeClickable(logOut));
+        logOut.click();
+    }
+
+    @FindBy(xpath = "//*[@id='sideLogin-left-rail']/h1")
+        private WebElement userNameLogOut;
+
+    public String getUserNameLogOut(){
+        getWait().until(ExpectedConditions.visibilityOf(userNameLogOut));
+        return userNameLogOut.getText();
+    }
 }
