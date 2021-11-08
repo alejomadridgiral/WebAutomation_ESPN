@@ -25,4 +25,4 @@ alejandro.madrid25@globant.com
 alejandro.madrid26@globant.com
 alejandro.madrid27@globant.com
 
-for groups=CancelAccount the account has to be previously be created and not already delete.
+for groups=CancelAccount the account has to be previously created and not already deleted.
