@@ -9,12 +9,12 @@
 <!--    <parameter name="Password" value="1234"/>-->
     <parameter name="browser" value="chrome" />
     <test name="My first test">
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="logIn" />-->
-<!--&lt;!&ndash;                <exclude name="group 2, group 1"/>&ndash;&gt;-->
-<!--            </run>-->
-<!--        </groups>-->
+        <groups>
+            <run>
+                <include name="CancelAccount1" />
+<!--                <exclude name="Signup, CancelAccount"/>-->
+            </run>
+        </groups>
         <classes>
             <class name="com.espn.training.test.EspnTest"></class>
         </classes>
