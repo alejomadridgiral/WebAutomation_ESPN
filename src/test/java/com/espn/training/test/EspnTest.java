@@ -23,8 +23,45 @@ public class EspnTest extends BaseTest{
 //    }
 
 
-    @BeforeTest (groups = "LogIn")
-    public void login(){
+//    @BeforeTest (groups = "LogIn")
+//    public void login(){
+//        EspnHomePage home = getEspnHomePage();
+//        home.triggerUser();
+//        home.logIn();
+//        home.switchToLogInIframe();
+//        home.fillEmailLogIn("alejandro.madrid4@globant.com");
+//        home.fillPasswordLogIn("GLo_ESPN_1*#");
+//        home.clickLogIn();
+//    }
+
+
+//    @Test (groups="logIn, Signup", priority = 0)
+//    public void testEspnLogin() {
+//        EspnHomePage home = getEspnHomePage();
+//        home.triggerUser();
+//        Assert.assertEquals(home.getUserName(), "WelcomeAlejandro!");
+//    }
+
+//    @Test (priority = 1)
+//    public void testEspnLogOut(){
+//        EspnHomePage home = getEspnHomePage();
+//        home.clickLogOut();
+//        Assert.assertEquals(home.getUserNameLogOut(), "Customize ESPN");
+//    }
+
+//    @Test
+//    public void cancelAccount(){
+//        EspnHomePage home = getEspnHomePage();
+//        home.triggerUser();
+//        home.clickEspnProfile();
+//        home.switchToLogInIframe();
+//        home.clickCancelAccount();
+//        home.clickConfirmAccountDelete();
+//        Assert.assertEquals(home.getAccountDeactivate(), "Customize ESPN");
+//    }
+
+    @Test
+    public void testCancelAccount(){
         EspnHomePage home = getEspnHomePage();
         home.triggerUser();
         home.logIn();
@@ -32,25 +69,8 @@ public class EspnTest extends BaseTest{
         home.fillEmailLogIn("alejandro.madrid4@globant.com");
         home.fillPasswordLogIn("GLo_ESPN_1*#");
         home.clickLogIn();
+        Assert.assertEquals(home.getAccountDeactivate(), "Account Deactivated");
     }
-
-
-    @Test (groups="logIn, Signup", priority = 0)
-    public void testEspnLogin() {
-        EspnHomePage home = getEspnHomePage();
-        home.triggerUser();
-        Assert.assertEquals(home.getUserName(), "WelcomeAlejandro!");
-    }
-
-    @Test (priority = 1)
-    public void testEspnLogOut(){
-        EspnHomePage home = getEspnHomePage();
-        home.clickLogOut();
-        Assert.assertEquals(home.getUserNameLogOut(), "Customize ESPN");
-    }
-
-
-
 
 
 

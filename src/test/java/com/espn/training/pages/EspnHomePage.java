@@ -126,4 +126,39 @@ public class EspnHomePage extends BasePage {
         getWait().until(ExpectedConditions.visibilityOf(userNameLogOut));
         return userNameLogOut.getText();
     }
+
+    @FindBy(css = "div[class='container'] li:nth-child(5) a:nth-child(1)")
+    private WebElement espnProfile;
+
+    public void clickEspnProfile(){
+        espnProfile.click();
+    }
+
+    @FindBy(css = "#cancel-account")
+    private WebElement cancelAccount;
+
+    public void clickCancelAccount() {
+        try {
+            cancelAccount.click();
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            cancelAccount.click();
+        }
+    }
+
+    @FindBy(css= "button[did-translate='deactivate.confirmation.buttons.confirm']")
+    private WebElement confirmAccountDelete;
+
+    public void clickConfirmAccountDelete(){
+        getWait().until(ExpectedConditions.visibilityOf(confirmAccountDelete));
+        confirmAccountDelete.click();
+    }
+
+    @FindBy(css= ".title.title-primary.ng-isolate-scope")
+    private WebElement accountDeactivate;
+
+    public String getAccountDeactivate(){
+        getWait().until(ExpectedConditions.visibilityOf(accountDeactivate));
+        return accountDeactivate.getText();
+    }
+
 }
