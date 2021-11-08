@@ -32,6 +32,7 @@ public class EspnTest extends BaseTest{
         home.fillPasswordLogIn("GLo_ESPN_1*#");
         home.clickLogIn();
         home.triggerUser();
+        home.clickLogOut();
         Assert.assertEquals(home.getUserName(), "WelcomeAlejandro!");
     }
 
