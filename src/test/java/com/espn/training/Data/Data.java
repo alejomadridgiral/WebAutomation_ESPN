@@ -4,7 +4,15 @@ import org.testng.annotations.DataProvider;
 
 public class Data {
 
-    @DataProvider(name="User")
-    public static Object [][] inputData(){return new Object[][] {{"alejandro.madrid2@globant.com"},{"alejandro.madrid3@globant.com"}, {"alejandro.madrid4@globant.com"}}; }
+    @DataProvider(name = "createData")
+    public static Object[][] getData() {
+        int getRandomNumber = (int) Math.floor(Math.random() * 1750);
+        Object[][] data = new Object[1][4];
+        data[0][0] = "Espn";
+        data[0][1] = "Create";
+        data[0][2] = "EspnCreate" + getRandomNumber + "@globant.com";
+        data[0][3] = "GLo_ESPN_1*#";
+        return data;
+    }
 
 }

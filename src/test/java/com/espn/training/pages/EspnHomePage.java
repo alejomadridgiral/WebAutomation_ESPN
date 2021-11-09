@@ -3,6 +3,7 @@ package com.espn.training.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -25,6 +26,7 @@ public class EspnHomePage extends BasePage {
     private WebElement logIn;
 
     public void logIn(){
+        getWait().until(ExpectedConditions.elementToBeClickable(logIn));
         logIn.click();
     }
 
@@ -117,6 +119,14 @@ public class EspnHomePage extends BasePage {
     public void clickLogOut(){
         getWait().until(ExpectedConditions.elementToBeClickable(logOut));
         logOut.click();
+    }
+
+    public void refreshLogin(){
+        Actions builder = new Actions(getDriver());
+        getWait().until(ExpectedConditions.visibilityOf(userTrigger));
+        builder.moveToElement(userTrigger).click(userTrigger);
+        builder.perform();
+        userTrigger.click();
     }
 
     @FindBy(xpath = "//*[@id='sideLogin-left-rail']/h1")
