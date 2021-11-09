@@ -6,11 +6,11 @@
         <listener class-name="com.espn.training.test.Listeners"></listener>
     </listeners>
     <parameter name="browser" value="chrome" />
-<!--    <parameter name="browser" value="firefox" />-->
+            <!--    <parameter name="browser" value="firefox" />-->
     <test name="My first test">
         <groups>
             <run>
-                <include name="cancelAccount" />
+                <include name="logIn" />
                 <exclude name="logOut, logIn, cancelAccount, signUp "></exclude>
             </run>
         </groups>
